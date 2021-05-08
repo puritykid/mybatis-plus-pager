@@ -8,17 +8,15 @@ public class ConvertFieldUtil {
 		String camelToUnderline = camelToUnderline("subject");
 		System.out.println(camelToUnderline);
 	}
-
 	   public static String camelToUnderline(String origin){
-//		      return stringProcess(
-//		          origin, (prev, c) -> {
-//		            if (Character.isLowerCase(prev) && Character.isUpperCase(c)) {
-//		              return "" + "_" + Character.toLowerCase(c);
-//		            }
-//		            return ""+c;
-//		          }
-//		      );
-		   return origin;
+		      return stringProcess(
+		          origin, (prev, c) -> {
+		            if (Character.isLowerCase(prev) && Character.isUpperCase(c)) {
+		              return "" + "_" + Character.toLowerCase(c);
+		            }
+		            return ""+c;
+		          }
+		      );
 		    }
 
 		    public static String underlineToCamel(String origin) {

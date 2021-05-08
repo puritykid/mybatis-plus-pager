@@ -1,6 +1,8 @@
 package com.lunz.util;
 
 import com.baomidou.mybatisplus.core.conditions.query.QueryWrapper;
+import com.baomidou.mybatisplus.core.metadata.IPage;
+
 import com.baomidou.mybatisplus.extension.plugins.pagination.Page;
 import lombok.Data;
 import lombok.ToString;
@@ -15,11 +17,12 @@ import lombok.ToString;
 @ToString
 public class MyQueryWrapper<T> {
 
-	private Page<T> page = new Page<>(1L,10L);
+	private Page<T> page;
 	
 	private QueryWrapper<T> queryWrapper;
 	
 	public MyQueryWrapper() {
+		this.page = new Page<>(1,10);
 		this.queryWrapper = new QueryWrapper<>();
 	}
 }
